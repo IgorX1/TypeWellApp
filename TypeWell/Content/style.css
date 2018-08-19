@@ -110,8 +110,14 @@ body {
     color: black;
 }
 
+.logo:hover .logo__exclamation-mark {
+    transition-property: color;
+    transition-duration: 0.5s;
+    color: red;
+}
+
 .logo_float_left {
-        float: left;
+    float: left;
 }
 
 .logo__t {
@@ -121,4 +127,14 @@ body {
 
 .logo_w{
     left:15px;
+}
+
+.logo__inscription{
+    color:white;
+    font-weight:bold;
+    position:absolute;
+    letter-spacing:3px;
+    left:60px;
+    bottom:1px;
+    font-size:24px;
 }
