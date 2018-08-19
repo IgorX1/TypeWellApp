@@ -110,7 +110,7 @@ body {
     color: black;
 }
 
-.logo:hover .logo__exclamation-mark {
+.logo:hover .logo__exclamation-mark { 
     transition-property: color;
     transition-duration: 0.5s;
     color: red;

@@ -24,7 +24,8 @@ namespace TypeWell
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/style.css"
+                      "~/Content/style.css",
+                      "~/Content/Home/Index/style.css"
                       ));
         }
     }
