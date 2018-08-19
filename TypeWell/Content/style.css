@@ -73,6 +73,8 @@ body {
 
 
 .logo {
+    transition-property: border-color, box-shadow, background-color;
+    transition-duration: 0.5s;
     width: 50px;
     height: 30px;
     display: inline-block;
@@ -80,15 +82,17 @@ body {
     border-radius: 5px;
     position: relative;
     box-shadow: 3px -3px 0 1px green;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .logo__letter {
-        color: white;
-        font-weight: bold;
-        display: inline-block;
-        font-size: 25px;
-        position: absolute;
+    transition-property: color;
+    transition-duration: 0.5s;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 25px;
+    position: absolute;
 }
 
 .logo:hover {
@@ -99,11 +103,11 @@ body {
     background-color:white;
 }
 
-    .logo:hover .logo__letter {
-        transition-property: color;
-        transition-duration: 0.5s;
-        color: black;
-    }
+.logo:hover .logo__letter {
+    transition-property: color;
+    transition-duration: 0.5s;
+    color: black;
+}
 
 .logo_float_left {
         float: left;
