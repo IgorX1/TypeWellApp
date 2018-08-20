@@ -23,10 +23,18 @@ namespace TypeWell
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            //bundle for layout
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/style.css",
-                      "~/Content/Home/Index/style.css"
+                      "~/Content/style.css"                     
                       ));
+
+            bundles.Add(new StyleBundle("~/Content/Home/Index").Include(
+                       "~/Content/Home/Index/style.css"));
+
+            /*Since this place we have a new bundle for each bem block*/
+
+            bundles.Add(new StyleBundle("~/Content/blocks/main-wrapper").Include(
+                       "~/Content/blocks/main-wrapper/main-wrapper.css"));
         }
     }
 }
