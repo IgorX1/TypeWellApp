@@ -38,6 +38,9 @@ namespace TypeWell
 
             bundles.Add(new StyleBundle("~/Content/blocks/typewritter").Include(
                        "~/Content/blocks/typewritter/typewritter.css"));
+
+            bundles.Add(new StyleBundle("~/Content/blocks/button").Include(
+                       "~/Content/blocks/button/button.css"));
         }
     }
 }

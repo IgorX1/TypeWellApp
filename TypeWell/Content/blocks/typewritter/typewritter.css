@@ -8,7 +8,7 @@
     }
 
     to {
-        width: 80%
+        width: 600px
     }
 }
 
@@ -40,7 +40,7 @@
 }
 
 .typewritter__text {
-    width: 80%;
+    width: 600px;
     text-transform: uppercase;
     vertical-align: middle;
     font-style: italic;

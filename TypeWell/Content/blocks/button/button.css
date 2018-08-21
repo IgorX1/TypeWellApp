@@ -1,0 +1,37 @@
+﻿.button {
+    background-color: #d0d3d8;
+    border-radius: 5px;
+    box-shadow: 0 0 0 3px green;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    padding: 0;
+    cursor: pointer;
+    transition-property: box-shadow;
+    transition-duration: 0.5s;
+}
+
+.button:hover {
+    transition-property:box-shadow;
+    box-shadow: 0 0 0 3px red;
+    transition-duration:0.5s;
+}
+
+.button_size_large {
+    width: 200px;
+    height: 50px;
+    font-size:20px;
+    line-height:20px;
+}
+
+.button_position_centered {
+    margin: 30px auto;
+}
+
+.button__text{
+    text-transform:uppercase;
+}
+
+.button-large__text{
+    line-height:50px;
+}

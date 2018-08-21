@@ -202,6 +202,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\blocks\button\button.css" />
     <Content Include="Content\blocks\main-wrapper\main-wrapper.css" />
     <Content Include="Content\blocks\typewritter\typewritter.css" />
     <Content Include="Content\bootstrap.css" />
