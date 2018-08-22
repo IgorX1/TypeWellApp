@@ -1,0 +1,18 @@
+﻿.card{
+    display:inline-block;
+    width:250px;
+    border:1px solid red;
+    margin-right:30px;
+    padding:0 15px;
+}
+
+.card__header {
+    display: list-item;                                             
+    list-style-type: disc;
+    list-style-position: inside;
+    text-align:left;
+}
+
+.card__text{
+
+}

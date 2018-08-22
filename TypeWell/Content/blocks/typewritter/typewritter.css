@@ -32,7 +32,6 @@
     border: 3px solid black;
     border-radius: 5px;
     position: relative;
-
 }
 
 .typewritter_margin_top{
@@ -50,6 +49,7 @@
     margin: 30px auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
     animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    overflow-wrap: break-word; /*!!!*/
 }
 
 /*.typewritter__text::after {

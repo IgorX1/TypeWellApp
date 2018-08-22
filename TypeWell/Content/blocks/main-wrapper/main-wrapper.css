@@ -8,3 +8,9 @@
     border-bottom:3px dashed green;
 }
 
+.main-wrapper__description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+

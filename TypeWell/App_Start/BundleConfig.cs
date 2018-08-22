@@ -41,6 +41,9 @@ namespace TypeWell
 
             bundles.Add(new StyleBundle("~/Content/blocks/button").Include(
                        "~/Content/blocks/button/button.css"));
+
+            bundles.Add(new StyleBundle("~/Content/blocks/card").Include(
+                       "~/Content/blocks/card/card.css"));
         }
     }
 }
