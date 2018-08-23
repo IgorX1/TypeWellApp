@@ -44,6 +44,18 @@ namespace TypeWell
 
             bundles.Add(new StyleBundle("~/Content/blocks/card").Include(
                        "~/Content/blocks/card/card.css"));
+
+            bundles.Add(new StyleBundle("~/Content/blocks/page-footer").Include(
+                       "~/Content/blocks/page-footer/page-footer.css"));
+
+            bundles.Add(new StyleBundle("~/Content/blocks/attention-text").Include(
+                       "~/Content/blocks/attention-text/attention-text.css"));
+
+            bundles.Add(new StyleBundle("~/Content/blocks/link").Include(
+                       "~/Content/blocks/link/link.css"));
+
+            bundles.Add(new StyleBundle("~/Content/blocks/mySlides").Include(
+                       "~/Content/blocks/mySlides/mySlides.css"));
         }
     }
 }

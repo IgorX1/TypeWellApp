@@ -4,13 +4,19 @@
     text-align:center;
 }
 
-.main-wrapper__segment:not(:last-of-type){
-    border-bottom:3px dashed green;
+.main-wrapper__segment{
+    padding-bottom:15px;
+}
+
+.main-wrapper__segment:not(:last-of-type) {
+    border-bottom: 3px dashed green;
 }
 
 .main-wrapper__description {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    
+}
+
+.main-wrapper__header{
+    padding-top:10px;
 }
 

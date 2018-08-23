@@ -5,8 +5,10 @@
     <title>TypeWell Home Page</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/blocks/attention-text")
+    @Styles.Render("~/Content/blocks/link")
 </head>
-<body>    
+<body>
     <div class="menu clearfix">
         <div class="logo-wrapper">
             <div class="logo">
@@ -14,7 +16,7 @@
                 <div class="logo__letter logo_w">W</div>
                 <span class="logo__inscription">TYPEWELL<span class="logo__exclamation-mark">!</span></span>
             </div>
-                
+
         </div>
         <ul class="menu__links menu_float_right">
             <li class="menu__item menu__item_margin_standart"><a class="menu__link" href="#">Home</a></li>
@@ -23,6 +25,20 @@
             <li class="menu__item menu__item_margin_standart"><a class="menu__link" href="#">About us</a></li>
         </ul>
     </div>
+
     @RenderBody()
+
+    <div class="page-footer">
+        <div class="logo-wrapper logo-wrapper_centered">
+            <div class="logo">
+                <div class="logo__letter logo__t">T</div>
+                <div class="logo__letter logo_w">W</div>
+                <span class="logo__inscription">TYPEWELL<span class="logo__exclamation-mark">!</span></span>
+            </div>
+        </div>
+        <div class="page-footer__farewell-wrapper">
+            <div class="page-footer__contacts"><a href="https://github.com/IgorX1" class="attention-text link">KonobasX</a> production - @DateTime.Today.Year</div>
+        </div>
+    </div>
 </body>
 </html>

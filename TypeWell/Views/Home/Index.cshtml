@@ -2,7 +2,11 @@
 @Styles.Render("~/Content/blocks/main-wrapper")
 @Styles.Render("~/Content/blocks/typewritter")
 @Styles.Render("~/Content/blocks/button")
-@Styles.Render("~/Content/blocks/card");
+@Styles.Render("~/Content/blocks/card")
+@Styles.Render("~/Content/blocks/page-footer")
+@Styles.Render("~/Content/blocks/mySlides")
+@Scripts.Render()
+
 <body>
     <main class="main-wrapper">
         <div class="main-wrapper__segment">
@@ -16,24 +20,49 @@
         <div class="main-wrapper__segment">
             <div class="main-wrapper__description">
                 <h2 class="main-wrapper__header">Why using TypeWell?</h2>
-                <div class="card">
-                    <h3 class="card__header">
-                        Conveniently
-                    </h3>
-                    <p class="card__text"></p>
+                <div class="card__wrapper">
+                    <div class="card">
+                        <h3 class="card__header">
+                            Convenient
+                        </h3>
+                        <p class="card__text">Quick typing skills assessment are at hand 24/7</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__header">
+                            Fast
+                        </h3>
+                        <p class="card__text">You'll get the assessment of your typing skills in a few clicks</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__header">
+                            Usefull
+                        </h3>
+                        <p class="card__text">It's always useful to know the real level of your typing skills</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3 class="card__header">
-                        Fast
-                    </h3>
-                    <p class="card__text"></p>
+            </div>
+        </div>
+        <div class="main-wrapper__segment">
+            <div class="slideshow-container card card__big">
+                <div class="mySlides fade">
+                    <img class="mySlides__photo"  src="~/Content/Images/man-1.jpg">
+                    <p class="mySlides__name">Jimm, businesman:</pclass="mySlides__photo">
+                    <blockquote class="mySlides__quote">I always use TypeWell! to test the typing skills of my new employees. It helps to get my projects done quickly.</blockquote>
                 </div>
-                <div class="card">
-                    <h3 class="card__header">
-                        Usefull
-                    </h3>
-                    <p class="card__text"></p>
+
+                <div class="mySlides fade">
+                    <img class="mySlides__photo" src="~/Content/Images/man-2.jpg">
+                    <p class="mySlides__name">Chan, student:</p>
+                    <blockquote class="mySlides__quote">TypeWell! helped me to improve my typing skills. Now it really helps me, because I type twice as fast as I used to.</blockquote>
                 </div>
+
+                <div class="mySlides fade">
+                    <img class="mySlides__photo" src="~/Content/Images/man-3.jpg">
+                    <p class="mySlides__name">Anna, office worker:</p>
+                    <blockquote class="mySlides__quote">I got employed really easily, when my recruiter saw my results in TypeWell! Now they use this service to test other employees' typing skills.</blockquote>
+                </div>
+
+
             </div>
         </div>
     </main>

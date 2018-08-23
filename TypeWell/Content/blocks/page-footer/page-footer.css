@@ -1,0 +1,19 @@
+﻿
+.page-footer{
+    background:linear-gradient(to bottom, white, black);
+    margin:0;
+    padding:0;
+    padding-top:15px;
+    width:100%;
+    color:white;
+    overflow:hidden;
+}
+
+.page-footer__farewell-wrapper {
+    color: white;
+}
+
+.page-footer__contacts {
+    width:300px;
+    float:right;
+}
