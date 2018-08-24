@@ -5,7 +5,8 @@
 }
 
 .main-wrapper__segment{
-    padding-bottom:15px;
+    padding-bottom:25px;
+    padding-top:25px;
 }
 
 .main-wrapper__segment:not(:last-of-type) {
@@ -13,10 +14,9 @@
 }
 
 .main-wrapper__description {
-    
 }
 
-.main-wrapper__header{
-    padding-top:10px;
+.main-wrapper__header {
+    margin-top:0;
 }
 

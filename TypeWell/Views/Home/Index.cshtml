@@ -5,14 +5,13 @@
 @Styles.Render("~/Content/blocks/card")
 @Styles.Render("~/Content/blocks/page-footer")
 @Styles.Render("~/Content/blocks/mySlides")
-@Scripts.Render()
 
 <body>
     <main class="main-wrapper">
         <div class="main-wrapper__segment">
             <div class="typewritter typewritter_margin_top">
                 <h1 class="typewritter__text">Type well with TypeWell!</h1>
-            </div>        
+            </div>
             <button class="button button_size_large button_position_centered">
                 <span class="button__text button-large__text">Start quick test</span>
             </button>
@@ -45,8 +44,8 @@
         <div class="main-wrapper__segment">
             <div class="slideshow-container card card__big">
                 <div class="mySlides fade">
-                    <img class="mySlides__photo"  src="~/Content/Images/man-1.jpg">
-                    <p class="mySlides__name">Jimm, businesman:</pclass="mySlides__photo">
+                    <img class="mySlides__photo" src="~/Content/Images/man-1.jpg">
+                    <p class="mySlides__name">Jimm, businesman:</p>
                     <blockquote class="mySlides__quote">I always use TypeWell! to test the typing skills of my new employees. It helps to get my projects done quickly.</blockquote>
                 </div>
 
@@ -66,4 +65,5 @@
             </div>
         </div>
     </main>
+    @Scripts.RenderFormat(@"<script src=""{0}"" async></script>", "~/Content/blocks/mySlidesJs")
 </body>

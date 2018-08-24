@@ -56,6 +56,9 @@ namespace TypeWell
 
             bundles.Add(new StyleBundle("~/Content/blocks/mySlides").Include(
                        "~/Content/blocks/mySlides/mySlides.css"));
+
+            bundles.Add(new ScriptBundle("~/Content/blocks/mySlidesJs").Include(
+                        "~/Content/blocks/mySlides/mySlides.js"));
         }
     }
 }

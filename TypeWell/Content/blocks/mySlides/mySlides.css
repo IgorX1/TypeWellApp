@@ -5,10 +5,30 @@
     max-width: 1000px;
     position: relative;
     margin: auto;
+    padding-top:15px;
 }
 
 .mySlides {
     display: none;
+}
+
+.mySlides__name{
+    font-weight:bold;
+}
+
+.mySlides__photo{
+    border-radius:50%;
+}
+
+.mySlides__text{
+    margin-bottom:0;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 @-webkit-keyframes fade {

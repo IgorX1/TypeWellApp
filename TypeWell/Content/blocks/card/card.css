@@ -7,10 +7,10 @@
 }
 
 .card__header {
-    display: list-item;                                             
+    display: list-item;
     list-style-type: disc;
     list-style-position: inside;
-    text-align:left;
+    text-align: left;
 }
 
 .card__text{
@@ -26,4 +26,6 @@
 
 .card__big {
     width: 500px;
+    height:260px;
+    overflow:hidden;
 }
