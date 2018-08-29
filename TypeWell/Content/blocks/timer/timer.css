@@ -1,0 +1,20 @@
+﻿body {
+
+}
+
+.timer {
+    position: absolute;
+    width: 100px;
+    background-color: black;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 85px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: red;
+    font-family: 'Sarpanch', sans-serif;
+    font-size:40px;
+}

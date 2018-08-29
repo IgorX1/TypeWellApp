@@ -38,18 +38,26 @@
     margin-top:30px;
 }
 
+.typewritter_margin_top_big {
+    margin-top: 60px;
+}
+
 .typewritter__text {
     width: 600px;
     text-transform: uppercase;
     vertical-align: middle;
     font-style: italic;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 30px auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
+    
+}
+
+.typewritter__text_animation_on {
     animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
     overflow-wrap: break-word; /*!!!*/
+    border-right: .15em solid orange; /* The typwriter cursor */
 }
 
 /*.typewritter__text::after {

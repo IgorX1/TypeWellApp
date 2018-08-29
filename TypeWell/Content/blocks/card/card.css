@@ -2,9 +2,11 @@
     display: inline-block;
     width: 250px;
     margin-right: 30px;
+    border-radius:5px;
     padding: 10px 15px;
-    background: linear-gradient(to bottom, white, #d0d3d8);
+    background:linear-gradient(to bottom, white, #d0d3d8);
 }
+
 
 .card__header {
     display: list-item;
