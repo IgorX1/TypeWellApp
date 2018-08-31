@@ -65,6 +65,9 @@ namespace TypeWell
 
             bundles.Add(new StyleBundle("~/Content/blocks/btn-group").Include(
                        "~/Content/blocks/btn-group/btn-group.css"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/Test.js").Include(
+                        "~/Scripts/MyScripts/Test.js"));
         }
     }
 }

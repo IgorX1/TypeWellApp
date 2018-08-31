@@ -3,19 +3,20 @@
 @Styles.Render("~/Content/blocks/button")
 @Styles.Render("~/Content/blocks/timer")
 @Styles.Render("~/Content/blocks/btn-group")
+@Scripts.Render("~/Scripts/Test.js")
 @{
     ViewBag.Title = "Quick Test";
 }
 <link href="https://fonts.googleapis.com/css?family=Sarpanch" rel="stylesheet">
 <main class="main-wrapper">
     <div class="main-wrapper__segment main-wrapper__for-timer">
-        <div class="timer" id="timer">0:00</div>
+        <div class="timer" id="timer">1:00</div>
         <div class="typewritter typewritter_margin_top_big">
             <h1 class="typewritter__text"></h1>
         </div>
         <div class="btn-group">
             <button class="button button_size_large button_position_centered">
-                <span class="button__text button-large__text">Start</span>
+                <span class="button__text button-large__text" onclick="startTest()">Start</span>
             </button>
             <button class="button button_size_large button_position_centered button-danger" disabled>
                 <span class="button__text button-large__text">Quit</span>
