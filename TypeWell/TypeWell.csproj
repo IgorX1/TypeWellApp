@@ -204,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\blocks\attention-text\attention-text.css" />
+    <Content Include="Content\blocks\btn-group\btn-group.css" />
     <Content Include="Content\blocks\button\button.css" />
     <Content Include="Content\blocks\card\card.css" />
     <Content Include="Content\blocks\link\link.css" />

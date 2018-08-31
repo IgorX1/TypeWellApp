@@ -1,14 +1,25 @@
-﻿body{
+﻿body {
+    position: relative;
+    min-height: 100%;
 }
 
-.page-footer{
-    background:linear-gradient(to bottom, white, black);
-    margin:0;
-    padding:0;
-    padding-top:15px;
-    width:100%;
-    color:white;
-    overflow:hidden;
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.page-footer {
+    background: linear-gradient(to bottom, white, black);
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+    width: 100%;
+    color: white;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .page-footer__farewell-wrapper {
