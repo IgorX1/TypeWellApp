@@ -11,10 +11,11 @@
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 85px;
+    top: 35px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     color: red;
     font-family: 'Sarpanch', sans-serif;
-    font-size:40px;
+    font-size: 40px;
+    z-index:10;
 }
