@@ -7,8 +7,9 @@ function startTest() {
     if (isTestInProcess === true)
         return;
     isTestInProcess = true;
-    //NEED:add stop btn activity
+    //TODO:add stop btn activity
     var textBox = initTextBox('test-text');
+    textBox.focus();
     textBox.addEventListener('keydown', keyboardHandler);
     timerOnGoing();
 }
@@ -33,7 +34,6 @@ function timerOnGoing() {
 //Find text box and make sure that it is empty
 function initTextBox(id) {
     var textbox = document.getElementById(id);
-    textBox.focus();
     if (textbox.innerHTML != "")
         textbox.innerHTML = "";
     return textbox;
