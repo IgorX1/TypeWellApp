@@ -32,6 +32,7 @@
     border: 3px solid black;
     border-radius: 5px;
     position: relative;
+    /*overflow: auto;*/
 }
 
 .typewritter_margin_top{
@@ -58,6 +59,15 @@
     animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
     overflow-wrap: break-word; /*!!!*/
     border-right: .15em solid orange; /* The typwriter cursor */
+}
+
+.typewritter__test-text {
+    overflow: auto;
+    word-wrap:break-word;
+}
+
+.typewritter_height_big{
+    min-height:400px;
 }
 
 /*.typewritter__text::after {
