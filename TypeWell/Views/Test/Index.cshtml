@@ -11,8 +11,17 @@
 <main class="main-wrapper">
     <div class="main-wrapper__segment main-wrapper__for-timer">
         <div class="timer" id="timer">1:00</div>
-        <div class="typewritter typewritter_margin_top_big typewritter_height_big">
-            <p class="typewritter__test-text" id="test-text" tabindex="0"></p>
+        <div class="typewritter typewritter__test typewritter_margin_top_big typewritter_height_big">
+        <p class="typewritter__test-text" id="test-text" tabindex="0">
+        @*@{
+            string text = ViewBag.Text;
+                
+            foreach(char i in text)
+            {
+                <span>@i</span>
+            }               
+        }   *@  
+            @ViewBag.Text
         </div>
         <div class="btn-group">
             <button class="button button_size_large button_position_centered" onclick="startTest()">

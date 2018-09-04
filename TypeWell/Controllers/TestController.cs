@@ -13,7 +13,9 @@ namespace TypeWell.Controllers
         // GET: Test
         public ActionResult Index()
         {
-            ViewBag.Text = ctx.TEXT.First().TextForTest;            
+            ViewBag.Text = (from i in ctx.TEXT
+                            where i.LENGTH1.Value == "s"
+                            select i.TextForTest).FirstOrDefault();
             return View();
         }
 

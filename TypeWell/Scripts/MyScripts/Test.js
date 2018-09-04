@@ -34,8 +34,8 @@ function timerOnGoing() {
 //Find text box and make sure that it is empty
 function initTextBox(id) {
     var textbox = document.getElementById(id);
-    if (textbox.innerHTML != "")
-        textbox.innerHTML = "";
+    //if (textbox.innerHTML != "")
+        //textbox.innerHTML = "";
     return textbox;
 }
 
