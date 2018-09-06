@@ -1,9 +1,5 @@
-﻿@Styles.Render("~/Content/blocks/main-wrapper")
-@Styles.Render("~/Content/blocks/typewritter")
-@Styles.Render("~/Content/blocks/button")
-@Styles.Render("~/Content/blocks/timer")
-@Styles.Render("~/Content/blocks/btn-group")
-@Scripts.Render("~/Scripts/Test.js")
+﻿@Styles.Render("~/Content/Test/Index")
+@Scripts.Render("~/Content/blocks/typewritter")
 @{
     ViewBag.Title = "Quick Test";
 }
@@ -13,14 +9,6 @@
         <div class="timer" id="timer">1:00</div>
         <div class="typewritter typewritter__test typewritter_margin_top_big typewritter_height_big">
         <p class="typewritter__test-text" id="test-text" tabindex="0">
-        @*@{
-            string text = ViewBag.Text;
-                
-            foreach(char i in text)
-            {
-                <span>@i</span>
-            }               
-        }   *@  
             @ViewBag.Text
         </div>
         <div class="btn-group">

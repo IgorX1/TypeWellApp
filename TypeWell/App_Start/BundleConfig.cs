@@ -8,6 +8,7 @@ namespace TypeWell
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            /*!-- Section with library scripts --*/
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -23,51 +24,50 @@ namespace TypeWell
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            //bundle for layout
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/style.css"                     
-                      ));
+            //Personal bundles section
 
+            //Styles section
+
+            //css for:_Layout.cshtml
+            bundles.Add(new StyleBundle("~/Content/Layout").Include(
+                    "~/Content/style.css",
+                    "~/Content/blocks/attention-text/attention-text.css",
+                    "~/Content/blocks/page-footer/page-footer.css",
+                    "~/Content/blocks/link/link.css"));
+
+            //css for:Test Index
+            bundles.Add(new StyleBundle("~/Content/Test/Index").Include(
+                    "~/Content/blocks/main-wrapper/main-wrapper.css",
+                    "~/Content/blocks/typewritter/typewritter.css",
+                    "~/Content/blocks/button/button.css",
+                    "~/Content/blocks/timer/timer.css",
+                    "~/Content/blocks/btn-group/btn-group.css"
+                    ));
+
+            //css for: Home Index
             bundles.Add(new StyleBundle("~/Content/Home/Index").Include(
-                       "~/Content/Home/Index/style.css"));
+                    "~/Content/Home/Index/style.css",
+                    "~/Content/blocks/main-wrapper/main-wrapper.css",
+                    "~/Content/blocks/typewritter/typewritter.css",
+                    "~/Content/blocks/button/button.css",
+                    "~/Content/blocks/page-footer/page-footer.css",
+                    "~/Content/blocks/card/card.css",
+                    "~/Content/blocks/mySlides/mySlides.css"
+                ));
 
-            /*Since this place we have a new bundle for each bem block*/
+            //-----------------------------------------------------------------------
 
-            bundles.Add(new StyleBundle("~/Content/blocks/main-wrapper").Include(
-                       "~/Content/blocks/main-wrapper/main-wrapper.css"));
-
-            bundles.Add(new StyleBundle("~/Content/blocks/typewritter").Include(
-                       "~/Content/blocks/typewritter/typewritter.css"));
-
-            bundles.Add(new StyleBundle("~/Content/blocks/button").Include(
-                       "~/Content/blocks/button/button.css"));
-
-            bundles.Add(new StyleBundle("~/Content/blocks/card").Include(
-                       "~/Content/blocks/card/card.css"));
-
-            bundles.Add(new StyleBundle("~/Content/blocks/page-footer").Include(
-                       "~/Content/blocks/page-footer/page-footer.css"));
-
-            bundles.Add(new StyleBundle("~/Content/blocks/attention-text").Include(
-                       "~/Content/blocks/attention-text/attention-text.css"));
-
-            bundles.Add(new StyleBundle("~/Content/blocks/link").Include(
-                       "~/Content/blocks/link/link.css"));
-
-            bundles.Add(new StyleBundle("~/Content/blocks/mySlides").Include(
-                       "~/Content/blocks/mySlides/mySlides.css"));
-
+            //Scripts section
+            
+            //js for: mySlides block
             bundles.Add(new ScriptBundle("~/Content/blocks/mySlidesJs").Include(
                         "~/Content/blocks/mySlides/mySlides.js"));
 
-            bundles.Add(new StyleBundle("~/Content/blocks/timer").Include(
-                       "~/Content/blocks/timer/timer.css"));
+           //js for: test
+            bundles.Add(new ScriptBundle("~/Content/blocks/typewritter").Include(
+                        "~/Content/blocks/typewritter/typewritter.js"));
 
-            bundles.Add(new StyleBundle("~/Content/blocks/btn-group").Include(
-                       "~/Content/blocks/btn-group/btn-group.css"));
-
-            bundles.Add(new ScriptBundle("~/Scripts/Test.js").Include(
-                        "~/Scripts/MyScripts/Test.js"));
+            //------------------------------------------------------------------------
         }
     }
 }
