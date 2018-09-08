@@ -1,0 +1,70 @@
+﻿/*Styles for the TypeWell logo*/
+
+.logo {
+    transition-property: border-color, box-shadow, background-color;
+    transition-duration: 0.5s;
+    width: 50px;
+    height: 30px;
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 3px -3px 0 1px green;
+    cursor: pointer;
+}
+
+/*T and W letters inside the logo*/
+.logo__letter {
+    transition-property: color;
+    transition-duration: 0.5s;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 25px;
+    position: absolute;
+}
+
+.logo:hover {
+    transition-property: border-color, box-shadow, background-color;
+    transition-duration: 0.5s;
+    border-color: green;
+    box-shadow: 3px -3px 0 1px red;
+    background-color: white;
+}
+
+.logo:hover .logo__letter {
+    transition-property: color;
+    transition-duration: 0.5s;
+    color: black;
+}
+
+.logo:hover .logo__exclamation-mark {
+    transition-property: color;
+    transition-duration: 0.5s;
+    color: red;
+}
+
+.logo_float_left {
+    float: left;
+}
+
+/*Letter T inside the logo*/
+.logo__t {
+    left: 5px;
+    bottom: 2px;
+}
+
+/*Letter W inside the logo*/
+.logo_w {
+    left: 15px;
+}
+
+.logo__inscription {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    letter-spacing: 3px;
+    left: 60px;
+    bottom: 1px;
+    font-size: 24px;
+}

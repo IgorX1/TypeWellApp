@@ -1,4 +1,8 @@
-﻿.btn-group{
+﻿/*Analogue of btn-group class from bootstrap
+    DIY in my project
+*/
+
+.btn-group{
     display:flex;
     flex-wrap:wrap;
 }

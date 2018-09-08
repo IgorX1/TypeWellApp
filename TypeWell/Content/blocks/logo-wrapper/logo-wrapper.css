@@ -1,0 +1,16 @@
+﻿/*Wrapper for the TypeWell logo*/
+
+.logo-wrapper {
+    display: inline-block;
+}
+
+.logo-wrapper_positioned_in-menu {
+    width: 200px;
+    padding-left: 30px;
+    padding-top: 7px;
+}
+
+.logo-wrapper_centered {
+    margin: 0 auto;
+    display: block;
+}

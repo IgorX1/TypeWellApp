@@ -1,6 +1,8 @@
-﻿body {
-}
-
+﻿/*Doesn't correspond to BEM methodology, 
+    because it also includes styles for elements from another namespace,
+    which still do fit in this file as they have a similar purpose in the program
+*/
+/*TODO: implement BEM metodology here*/
 .slideshow-container {
     max-width: 1000px;
     position: relative;

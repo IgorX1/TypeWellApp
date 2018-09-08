@@ -1,63 +1,22 @@
-﻿/*Add styling for links adn logo hover */
-
-body, html {
-    padding:0;
-    margin:0;
+﻿/*  This documnet deliberately doesn't follow BEM.
+    It provides general styles for the whole website.
+    There is a link to it in _Layout bundle => thus 
+    it is included in each tab with a layout.
+*/
+body {
+    position: relative;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
     font-family: 'Nunito', sans-serif;
 }
 
-.menu {
-    width:100%;
-    height:50px;
-    background-color:black;
-}
-
-.menu_float_right {
-    float: right;
-}
-
-.menu__item {
-    list-style: none;
-    display: inline-block;
-    font-weight: bold;
-    height:50px;
-    line-height:50px;
-    position:relative;
-}
-
-.menu__item_margin_standart {
-    margin-right: 30px;
-}
-
-.menu__link{
-    color:white;
-    text-decoration:none;
-}
-
-@keyframes linklining {
-    from {width:0;}
-    to {width:100%;}
-}
-
-.menu__item::after {
-    width:0%;
-    height:2px;
-    content:"";
-    position:absolute;
-    bottom:8px;
-    left:0%;
-    display:block;
-    border-bottom:3px solid green;
-}
-
-.menu__item:hover::after{
-    animation-name:linklining;
-    animation-duration:0.5s;
-    animation-fill-mode:forwards;
-}
-
-.menu__links{
-    margin:0;
+html {
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
 }
 
 .clearfix::after{
@@ -66,84 +25,4 @@ body, html {
     clear:both;
 }
 
-.logo-wrapper {
-    display: inline-block;
-    width: 200px;
-    padding-left: 30px;
-    padding-top: 7px;
-}
 
-
-.logo {
-    transition-property: border-color, box-shadow, background-color;
-    transition-duration: 0.5s;
-    width: 50px;
-    height: 30px;
-    display: inline-block;
-    border: 3px solid white;
-    border-radius: 5px;
-    position: relative;
-    box-shadow: 3px -3px 0 1px green;
-    cursor: pointer;
-}
-
-.logo__letter {
-    transition-property: color;
-    transition-duration: 0.5s;
-    color: white;
-    font-weight: bold;
-    display: inline-block;
-    font-size: 25px;
-    position: absolute;
-}
-
-.logo:hover {
-    transition-property: border-color, box-shadow, background-color;
-    transition-duration: 0.5s;
-    border-color: green;
-    box-shadow: 3px -3px 0 1px red;
-    background-color:white;
-}
-
-.logo:hover .logo__letter {
-    transition-property: color;
-    transition-duration: 0.5s;
-    color: black;
-}
-
-.logo:hover .logo__exclamation-mark { 
-    transition-property: color;
-    transition-duration: 0.5s;
-    color: red;
-}
-
-.logo_float_left {
-    float: left;
-}
-
-.logo__t {
-    left:5px;
-    bottom:2px;
-}
-
-.logo_w{
-    left:15px;
-}
-
-.logo__inscription{
-    color:white;
-    font-weight:bold;
-    position:absolute;
-    letter-spacing:3px;
-    left:60px;
-    bottom:1px;
-    font-size:24px;
-}
-
-.logo-wrapper_centered {
-    margin: 0 auto;
-    display: block;
-}
-
-.logo-wrapper{
-}

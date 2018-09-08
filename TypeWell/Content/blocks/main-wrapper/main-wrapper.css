@@ -1,4 +1,9 @@
-﻿.main-wrapper {
+﻿/*Provides general styles for the website.
+    All content on each tab is placed inside main tag
+    with this class.
+    
+*/
+.main-wrapper {
     width: 80%;
     margin: auto;
     text-align: center;

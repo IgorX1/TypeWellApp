@@ -1,7 +1,4 @@
-﻿body {
-
-}
-
+﻿/*Timer used on test tab for the counddown during the quick(not only) test*/
 .timer {
     position: absolute;
     width: 100px;

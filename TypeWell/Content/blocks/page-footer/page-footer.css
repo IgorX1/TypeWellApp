@@ -1,13 +1,4 @@
-﻿body {
-    position: relative;
-    min-height: 100%;
-}
-
-html {
-    height: 100%;
-    box-sizing: border-box;
-}
-
+﻿
 .page-footer {
     background: linear-gradient(to bottom, white, black);
     margin: 0;

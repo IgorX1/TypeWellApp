@@ -1,4 +1,7 @@
-﻿.card {
+﻿/*Card is used to create a special article on the page
+In this project it is mostly used on home page (carousel ...)
+*/
+.card {
     display: inline-block;
     width: 250px;
     margin-right: 30px;
@@ -26,7 +29,7 @@
     flex-wrap:wrap;
 }
 
-.card__big {
+.card_size_large {
     width: 500px;
     height:260px;
     overflow:hidden;

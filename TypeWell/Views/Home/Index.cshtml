@@ -2,41 +2,41 @@
 
 <body>
     <main class="main-wrapper">
-        <div class="main-wrapper__segment">
+        <section class="main-wrapper__segment">
             <div class="typewritter typewritter_margin_top">
                 <h1 class="typewritter__text typewritter__text_animation_on">Type well with TypeWell!</h1>
             </div>
             <button class="button button_size_large button_position_centered" onclick="location.href='@Url.Action("Index", "Test")'">
                 <span class="button__text button-large__text">Start quick test</span>
             </button>
-        </div>
-        <div class="main-wrapper__segment">
+        </section>
+        <section class="main-wrapper__segment">
             <div class="main-wrapper__description">
                 <h2 class="main-wrapper__header">Why using TypeWell?</h2>
                 <div class="card__wrapper">
-                    <div class="card card_background_convenient">
+                    <article class="card card_background_convenient">
                         <h3 class="card__header">
                             Convenient
                         </h3>
                         <p class="card__text">Quick typing skills assessment are at hand 24/7</p>
-                    </div>
-                    <div class="card card_background_fast">
+                    </article>
+                    <article class="card card_background_fast">
                         <h3 class="card__header">
                             Fast
                         </h3>
                         <p class="card__text">You'll get the assessment of your typing skills in a few clicks</p>
-                    </div>
-                    <div class="card card_background_useful">
+                    </article>
+                    <article class="card card_background_useful">
                         <h3 class="card__header">
                             Useful
                         </h3>
                         <p class="card__text">It's always useful to know the real level of your typing skills</p>
-                    </div>
+                    </article>
                 </div>
             </div>
-        </div>
-        <div class="main-wrapper__segment">
-            <div class="slideshow-container card card__big">
+        </section>
+        <section class="main-wrapper__segment">
+            <div class="slideshow-container card card_size_large">
                 <div class="mySlides fade">
                     <img class="mySlides__photo" src="~/Content/Images/man-1.jpg">
                     <p class="mySlides__name">Jimm, businesman:</p>
@@ -57,7 +57,7 @@
 
 
             </div>
-        </div>
+        </section>
     </main>
     @Scripts.RenderFormat(@"<script src=""{0}"" async></script>", "~/Content/blocks/mySlidesJs")
 </body>

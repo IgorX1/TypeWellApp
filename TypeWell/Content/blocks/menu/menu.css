@@ -1,0 +1,59 @@
+﻿/*Styles for the main navigation menu*/
+.menu {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+}
+
+.menu_float_right {
+    float: right;
+}
+
+.menu__item {
+    list-style: none;
+    display: inline-block;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+}
+
+.menu__item_margin_standart {
+    margin-right: 30px;
+}
+
+.menu__link {
+    color: white;
+    text-decoration: none;
+}
+
+@keyframes linklining {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.menu__item::after {
+    width: 0%;
+    height: 2px;
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 0%;
+    display: block;
+    border-bottom: 3px solid green;
+}
+
+.menu__item:hover::after {
+    animation-name: linklining;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.menu__links {
+    margin: 0;
+}

@@ -33,6 +33,9 @@ namespace TypeWell
                     "~/Content/style.css",
                     "~/Content/blocks/attention-text/attention-text.css",
                     "~/Content/blocks/page-footer/page-footer.css",
+                    "~/Content/blocks/menu/menu.css",
+                    "~/Content/blocks/logo/logo.css",
+                    "~/Content/blocks/logo-wrapper/logo-wrapper.css",
                     "~/Content/blocks/link/link.css"));
 
             //css for:Test Index
@@ -50,7 +53,6 @@ namespace TypeWell
                     "~/Content/blocks/main-wrapper/main-wrapper.css",
                     "~/Content/blocks/typewritter/typewritter.css",
                     "~/Content/blocks/button/button.css",
-                    "~/Content/blocks/page-footer/page-footer.css",
                     "~/Content/blocks/card/card.css",
                     "~/Content/blocks/mySlides/mySlides.css"
                 ));

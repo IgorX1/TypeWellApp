@@ -1,6 +1,7 @@
-﻿body {
-}
-
+﻿/*  class with styles for the text,
+    on which the user should pay more attention
+    then on ordnary text
+*/
 .attention-text{
     color:orange;
 }
