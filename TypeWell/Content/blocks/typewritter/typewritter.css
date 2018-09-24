@@ -78,6 +78,7 @@
     letter-spacing:1.5px;
 }
 
+/*To get rid of :focus outline*/
 .typewritter__test-text:focus {
     outline: none;
 }

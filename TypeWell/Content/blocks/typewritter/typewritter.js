@@ -1,16 +1,18 @@
 ﻿'use strict';
 var isTestInProcess = false;
+var textBox;//the textbox for the user's input
+var currentIndex = 0;//the index of the current character, which we are on
+var text;//the text, which user tries to type
 
 //Called when Start Test button is clicked
 function startTest() {
-
-    if (isTestInProcess === true)
-        return;
+    /*Do not start a new test before the previous one ends*/
+    if (isTestInProcess === true) return;
     isTestInProcess = true;
+
     //TODO:add stop btn activity
-    var textBox = initTextBox('test-text');
-    textBox.focus();
-    textBox.addEventListener('keydown', keyboardHandler);
+    initTextBox('test-text');
+    initTextString('text');
     timerOnGoing();
 }
 
@@ -25,21 +27,39 @@ function timerOnGoing() {
         if (secondsLeft < 1) {
             isTestInProcess = false;
             clearInterval(timerId);
+            textBox.removeEventListener('keyPress', keyboardHandler);
             document.getElementById('timer').innerHTML = "1:00";
         }
     }, 1000
     )
 }
 
-//Find text box and make sure that it is empty
+//Find the input text box
 function initTextBox(id) {
-    var textbox = document.getElementById(id);
-    //if (textbox.innerHTML != "")
-        //textbox.innerHTML = "";
-    return textbox;
+    textBox = document.getElementById(id);
+    textBox.focus();
+    textBox.addEventListener('keydown', keyboardHandler);
+}
+
+function initTextString(id) {
+    text = document.getElementById(id).value;
 }
 
 function keyboardHandler(e) {
-    document.getElementById('test-text').innerHTML += String.fromCharCode(e.which);
+    //Coping with SPACE (decline scroll effect)
+    if (e.keyCode == 32) e.preventDefault();
+
+    //Coping with SHIFT key
+    if (e.keyCode != 16) {
+        var input = e.shiftKey ? String.fromCharCode(e.which) : String.fromCharCode(e.which).toLowerCase();
+        var expected = text.charAt(currentIndex);
+        var targetSpan = textBox.children[currentIndex];
+        if (input === expected) {
+            targetSpan.style.color = "green";
+        } else {
+            targetSpan.style.color = "red";
+        }
+        currentIndex++;
+    }  
 }
 
