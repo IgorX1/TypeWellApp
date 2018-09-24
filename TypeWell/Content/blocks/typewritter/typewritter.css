@@ -81,3 +81,7 @@
 .typewritter_height_big{
     min-height:400px;
 }
+
+#test-text:focus{
+    outline:none;
+}
