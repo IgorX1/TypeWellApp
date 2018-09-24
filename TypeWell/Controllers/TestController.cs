@@ -13,10 +13,11 @@ namespace TypeWell.Controllers
         // GET: Test
         public ActionResult Index()
         {
-            ViewBag.Text = (from i in ctx.TEXT
-                            where i.LENGTH1.Value == "s"
-                            select i.TextForTest).FirstOrDefault();
-            return View();
+            TEXT defaultText = (from i in ctx.TEXT
+                                where i.LENGTH1.Value == Constants.textLength_short
+                                select i).FirstOrDefault();
+
+            return View(defaultText);
         }
 
         protected override void Dispose(bool disposing)
