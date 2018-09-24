@@ -78,10 +78,10 @@
     letter-spacing:1.5px;
 }
 
-.typewritter_height_big{
-    min-height:400px;
+.typewritter__test-text:focus {
+    outline: none;
 }
 
-#test-text:focus{
-    outline:none;
+.typewritter_height_big {
+    min-height: 400px;
 }
