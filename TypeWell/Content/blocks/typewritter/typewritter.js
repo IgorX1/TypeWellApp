@@ -9,6 +9,7 @@ function startTest() {
     /*Do not start a new test before the previous one ends*/
     if (isTestInProcess === true) return;
     isTestInProcess = true;
+    //document.getElementById('stop-btn').disabled = false;
 
     //TODO:add stop btn activity
     initTextBox('test-text');
@@ -25,13 +26,29 @@ function timerOnGoing() {
         else secondsToShow = --secondsLeft;
         document.getElementById('timer').innerHTML = "0:" + secondsToShow;
         if (secondsLeft < 1) {
-            isTestInProcess = false;
-            clearInterval(timerId);
-            textBox.removeEventListener('keyPress', keyboardHandler);
-            document.getElementById('timer').innerHTML = "1:00";
+            stopTestAndSetValuesToDefault(timerId);
         }
     }, 1000
     )
+}
+
+/**
+ * Function, which is invoked every time the timer stops.
+ * It sets the values of all necessary variables to default values,
+ * so that a new test can be ran
+ */
+function stopTestAndSetValuesToDefault(timerId) {
+    isTestInProcess = false;
+    clearInterval(timerId);
+    textBox.removeEventListener('keyPress', keyboardHandler);
+    document.getElementById('timer').innerHTML = "1:00";
+    var letters = document.querySelectorAll('#test-text > span');
+    letters.forEach(
+        function (currentValue, currentIndex, listObj) {
+            currentValue.style.color = 'black';
+        }
+    );
+    currentIndex = 0;
 }
 
 //Find the input text box
@@ -45,6 +62,10 @@ function initTextString(id) {
     text = document.getElementById(id).value;
 }
 
+/**
+ * Handler for the keyPress event
+ * @param {any} e event entity
+ */
 function keyboardHandler(e) {
     //Coping with SPACE (decline scroll effect)
     if (e.keyCode == 32) e.preventDefault();
