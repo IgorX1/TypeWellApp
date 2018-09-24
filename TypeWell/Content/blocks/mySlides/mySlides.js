@@ -9,5 +9,5 @@ function showSlides() {
     if (slideIndex >= slides.length)
         slideIndex = 0;
     slides[slideIndex++].style.display = "block";
-    setTimeout(showSlides, 5000);
+    setTimeout(showSlides, 10000);
 }
