@@ -32,24 +32,26 @@
                 </div><!--% of text typed-->
             </div>
             <p class="typewritter__test-text" id="test-text" tabindex="0">
-                @foreach(char c in Model.TextForTest.ToCharArray())
-                {<!--
-                    --><span class="typewritter__character">@c</span><!--
+                @foreach (char c in Model.TextForTest.ToCharArray())
+                {<!--                       
+                    --><span class="typewritter__character">@c</span><!--                                     
                 -->}
-            </p>             
+            </p>
         </div>
         <div class="btn-group">
-            <button class="button button_size_large button_position_centered" onclick="startTest()">
+            <button class="button button__start button_size_large button_position_centered" onclick="startTest()">
                 <span class="button__text button-large__text">Start</span>
             </button>
-            <button class="button button_size_large button_position_centered button-general" >
+            <button class="button button_size_large button_position_centered button-general">
                 <span class="button__text button-large__text">Rules</span>
             </button>
-            <button class="button button_size_large button_position_centered button-danger" id="stop-btn" onclick="finishTest()" disabled>
+            <button class="button button__stop button_size_large button_position_centered button-danger" id="stop-btn" onclick="finishTest()" disabled>
                 <span class="button__text button-large__text">Quit</span>
             </button>
         </div>
     </div>
 </main>
+
+
 
 

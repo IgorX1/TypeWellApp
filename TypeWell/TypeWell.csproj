@@ -251,6 +251,7 @@
     <Content Include="Content\blocks\mySlides\mySlides.css" />
     <Content Include="Content\blocks\mySlides\mySlides.js" />
     <Content Include="Content\blocks\page-footer\page-footer.css" />
+    <Content Include="Content\blocks\popup\popup.css" />
     <Content Include="Content\blocks\timer\timer.css" />
     <Content Include="Content\blocks\typewritter\typewritter.css" />
     <Content Include="Content\bootstrap.css" />
