@@ -12,7 +12,7 @@
     <div class="main-wrapper__segment main-wrapper__for-timer">
         <div class="timer" id="timer">1:00</div>
         <div class="typewritter typewritter__test typewritter_margin_top_big typewritter_height_big">
-            <div class="typewritter__results">
+            <div class="typewritter__results" id="resblock">
                 <h3 class="typewritter__results-header">RESULTS:</h3>
                 <div class="typewritter__result-item">
                     <span class="typewritter__results-key">Speed:</span>
@@ -34,7 +34,7 @@
             <p class="typewritter__test-text" id="test-text" tabindex="0">
                 @foreach(char c in Model.TextForTest.ToCharArray())
                 {<!--
-                    --><span>@c</span><!--
+                    --><span class="typewritter__character">@c</span><!--
                 -->}
             </p>             
         </div>

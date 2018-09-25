@@ -1,22 +1,26 @@
 ﻿'use strict';
 var isTestInProcess = false;
+var isFirstTest = true;
 var textBox;//the textbox for the user's input
 var currentIndex = 0;//the index of the current character, which we are on
 var text;//the text, which user tries to type
-
 var numOfMistakes = 0;//general number of mistakes in one test
-
 var maximalRightSequence = 0;//maximal number of correctly typed characters in a row
 var numInThisSequence = 0;
-
 var speed = 0;
 var numOfCorrect = 0;
+
+var carretColor = "orange";
 
 //Called when Start Test button is clicked
 function startTest() {
     /*Do not start a new test before the previous one ends*/
     if (isTestInProcess === true) return;
     isTestInProcess = true;
+    if (!isFirstTest) {
+        changeDispalyPropertiesAfterTestFinishes("1", "none");
+    }
+    isFirstTest = false;
     initStatsValues();
 
     //TODO:add stop btn activity
@@ -67,7 +71,7 @@ function showResults() {
     calculateSpeed();
     var elem = document.getElementById('speedId');
     elem.innerText = numOfCorrect;
-    elem.innerText += "digits per minuite";
+    elem.innerText += " digits per minuite";
 
     //mistakes calculation
     elem = document.getElementById('mistakesId');
@@ -82,6 +86,8 @@ function showResults() {
     elem = document.getElementById('progressId');
     elem.innerText += Math.round((currentIndex / text.length) * 100);
     elem.innerText += "%";
+
+    changeDispalyPropertiesAfterTestFinishes("0", "block");
 }
 
 /**
@@ -91,11 +97,24 @@ function calculateSpeed() {
     speed = currentIndex / text.length;
 }
 
+/**
+ * Function is responsible for hiding text for typing and showing block woth the results instead
+ * @param {String} opacity the target opacity of the typing text
+ * @param {String} displayValue the display property value for the results block
+ */
+function changeDispalyPropertiesAfterTestFinishes(opacity, displayValue) {
+    var elem = document.getElementById('test-text');
+    elem.style.opacity = opacity;
+    elem = document.getElementById('resblock');
+    elem.style.display = displayValue;
+}
+
 //Find the input text box
 function initTextBox(id) {
     textBox = document.getElementById(id);
     textBox.focus();
     textBox.addEventListener('keydown', keyboardHandler);
+    textBox.children[currentIndex].style.borderBottom = "2px solid " + carretColor
 }
 
 function initTextString(id) {
@@ -119,6 +138,10 @@ function initStatsValues() {
  * @param {any} e event entity
  */
 function keyboardHandler(e) {
+    //Move the cursor
+    textBox.children[currentIndex].style.borderBottom = "none"
+    textBox.children[currentIndex + 1].style.borderBottom = "2px solid " + carretColor
+
     //Coping with SPACE (decline scroll effect)
     if (e.keyCode === 32) e.preventDefault();
 
