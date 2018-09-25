@@ -17,10 +17,7 @@ function startTest() {
     /*Do not start a new test before the previous one ends*/
     if (isTestInProcess === true) return;
     isTestInProcess = true;
-    numOfMistakes = 0;
-    speed = 0;
-    maximalRightSequence = 0;
-    numOfCorrect = 0;
+    initStatsValues();
 
     //TODO:add stop btn activity
     initTextBox('test-text');
@@ -103,6 +100,18 @@ function initTextBox(id) {
 
 function initTextString(id) {
     text = document.getElementById(id).value;
+}
+
+/**
+ * Initialize stats variables to default values
+ * in order to be able to count statistics for an upcoming test
+ */
+function initStatsValues() {
+    numOfMistakes = 0;
+    numInThisSequence = 0;
+    speed = 0;
+    maximalRightSequence = 0;
+    numOfCorrect = 0;
 }
 
 /**
