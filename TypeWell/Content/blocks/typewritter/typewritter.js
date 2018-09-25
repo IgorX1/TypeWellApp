@@ -1,16 +1,16 @@
 ﻿'use strict';
-var isTestInProcess = false;
-var isFirstTest = true;
+var isTestInProcess = false;//indicates whether the test is in process
+var isFirstTest = true;//indicates whether there were tests in the current session
 var textBox;//the textbox for the user's input
 var currentIndex = 0;//the index of the current character, which we are on
 var text;//the text, which user tries to type
 var numOfMistakes = 0;//general number of mistakes in one test
 var maximalRightSequence = 0;//maximal number of correctly typed characters in a row
-var numInThisSequence = 0;
-var speed = 0;
-var numOfCorrect = 0;
+var numInThisSequence = 0;//used to find var maximalRightSequence
+var speed = 0;//user's speed of typing
+var numOfCorrect = 0;//number of correctly typed characters
 
-var carretColor = "orange";
+var carretColor = "orange";//color of the carret
 
 //Called when Start Test button is clicked
 function startTest() {
