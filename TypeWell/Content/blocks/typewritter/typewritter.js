@@ -4,12 +4,23 @@ var textBox;//the textbox for the user's input
 var currentIndex = 0;//the index of the current character, which we are on
 var text;//the text, which user tries to type
 
+var numOfMistakes = 0;//general number of mistakes in one test
+
+var maximalRightSequence = 0;//maximal number of correctly typed characters in a row
+var numInThisSequence = 0;
+
+var speed = 0;
+var numOfCorrect = 0;
+
 //Called when Start Test button is clicked
 function startTest() {
     /*Do not start a new test before the previous one ends*/
     if (isTestInProcess === true) return;
     isTestInProcess = true;
-    //document.getElementById('stop-btn').disabled = false;
+    numOfMistakes = 0;
+    speed = 0;
+    maximalRightSequence = 0;
+    numOfCorrect = 0;
 
     //TODO:add stop btn activity
     initTextBox('test-text');
@@ -26,6 +37,7 @@ function timerOnGoing() {
         else secondsToShow = --secondsLeft;
         document.getElementById('timer').innerHTML = "0:" + secondsToShow;
         if (secondsLeft < 1) {
+            showResults();
             stopTestAndSetValuesToDefault(timerId);
         }
     }, 1000
@@ -49,6 +61,37 @@ function stopTestAndSetValuesToDefault(timerId) {
         }
     );
     currentIndex = 0;
+}
+
+
+function showResults() {
+
+    //speed calculation
+    calculateSpeed();
+    var elem = document.getElementById('speedId');
+    elem.innerText = numOfCorrect;
+    elem.innerText += "digits per minuite"
+
+    //mistakes calculation
+    elem = document.getElementById('mistakesId');
+    elem.innerText = numOfMistakes;
+
+    //maximal sequence calculation
+    elem = document.getElementById('maxSeqId');
+    elem.innerText += maximalRightSequence;
+    elem.innerText += " digits";
+
+    //% of text typed calculation
+    elem = document.getElementById('progressId');
+    elem.innerText += Math.round((currentIndex / text.length) * 100);
+    elem.innerText += "%";
+}
+
+/**
+ * Find the total typing speed in this test
+ */
+function calculateSpeed() {
+    speed = currentIndex / text.length;
 }
 
 //Find the input text box
@@ -75,11 +118,21 @@ function keyboardHandler(e) {
         var input = e.shiftKey ? String.fromCharCode(e.which) : String.fromCharCode(e.which).toLowerCase();
         var expected = text.charAt(currentIndex);
         var targetSpan = textBox.children[currentIndex];
-        if (input === expected) {
-            targetSpan.style.color = "green";
+         if (input === expected) {
+             targetSpan.style.color = "green";
+             numOfCorrect++;
+
+             numInThisSequence++;
         } else {
-            targetSpan.style.color = "red";
+             numOfMistakes++;
+             numInThisSequence = 0;
+             targetSpan.style.color = "red";
         }
+
+        if (numInThisSequence > maximalRightSequence) {
+            maximalRightSequence = numInThisSequence;
+        }
+
         currentIndex++;
     }  
 }

@@ -86,3 +86,15 @@
 .typewritter_height_big {
     min-height: 400px;
 }
+
+.typewritter__results{
+    position:absolute;
+    border:1px solid red;
+    width:100%;
+    right:0;
+    top:0;
+}
+
+.typewritter__results_header{
+    text-align:center;
+}

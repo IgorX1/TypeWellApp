@@ -12,12 +12,31 @@
     <div class="main-wrapper__segment main-wrapper__for-timer">
         <div class="timer" id="timer">1:00</div>
         <div class="typewritter typewritter__test typewritter_margin_top_big typewritter_height_big">
-        <p class="typewritter__test-text" id="test-text" tabindex="0">
-            @foreach(char c in Model.TextForTest.ToCharArray())
-            {<!--
-                --><span>@c</span><!--
-            -->}
-             
+            <div class="typewritter__results">
+                <h3 class="typewritter__results-header">RESULTS:</h3>
+                <div class="typewritter__result-item">
+                    <span class="typewritter__results-key">Speed:</span>
+                    <span class="typewritter__results-value" id="speedId"></span>
+                </div><!--The speed of the input-->
+                <div class="typewritter__result-item">
+                    <span class="typewritter__results-key">Mistakes:</span>
+                    <span class="typewritter__results-value" id="mistakesId"></span>
+                </div><!--The number of mistakes-->
+                <div class="typewritter__result-item">
+                    <span class="typewritter__results-key">Maximal sequence:</span>
+                    <span class="typewritter__results-value" id="maxSeqId"></span>
+                </div><!--Maxiamal sequence of correct digits in a row-->
+                <div class="typewritter__result-item">
+                    <span class="typewritter__results-key">Progress:</span>
+                    <span class="typewritter__results-value" id="progressId"></span>
+                </div><!--% of text typed-->
+            </div>
+            <p class="typewritter__test-text" id="test-text" tabindex="0">
+                @foreach(char c in Model.TextForTest.ToCharArray())
+                {<!--
+                    --><span>@c</span><!--
+                -->}
+            </p>             
         </div>
         <div class="btn-group">
             <button class="button button_size_large button_position_centered" onclick="startTest()">
