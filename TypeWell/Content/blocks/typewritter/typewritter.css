@@ -102,3 +102,16 @@
 .typewritter__character {
     animation: blink-caret 1s step-end infinite;
 }
+
+.typewritter__result-item{
+    margin-bottom:10px;
+}
+
+.typewritter__results-key{
+    font-weight:bold;
+    color:green;
+}
+
+.typewritter__results-value{
+    color: red;
+}
