@@ -33,7 +33,7 @@ function timerOnGoing() {
     var secondsLeft = 60;
     var secondsToShow = secondsLeft;
     var timerId = setInterval(function () {
-        if (secondsLeft <= 10) secondsToShow = "0" + (--secondsLeft)
+        if (secondsLeft <= 10) secondsToShow = "0" + (--secondsLeft);
         else secondsToShow = --secondsLeft;
         document.getElementById('timer').innerHTML = "0:" + secondsToShow;
         if (secondsLeft < 1) {
@@ -41,7 +41,7 @@ function timerOnGoing() {
             stopTestAndSetValuesToDefault(timerId);
         }
     }, 1000
-    )
+    );
 }
 
 /**
@@ -70,7 +70,7 @@ function showResults() {
     calculateSpeed();
     var elem = document.getElementById('speedId');
     elem.innerText = numOfCorrect;
-    elem.innerText += "digits per minuite"
+    elem.innerText += "digits per minuite";
 
     //mistakes calculation
     elem = document.getElementById('mistakesId');
@@ -111,10 +111,10 @@ function initTextString(id) {
  */
 function keyboardHandler(e) {
     //Coping with SPACE (decline scroll effect)
-    if (e.keyCode == 32) e.preventDefault();
+    if (e.keyCode === 32) e.preventDefault();
 
     //Coping with SHIFT key
-    if (e.keyCode != 16) {
+    if (e.keyCode !== 16) {
         var input = e.shiftKey ? String.fromCharCode(e.which) : String.fromCharCode(e.which).toLowerCase();
         var expected = text.charAt(currentIndex);
         var targetSpan = textBox.children[currentIndex];
