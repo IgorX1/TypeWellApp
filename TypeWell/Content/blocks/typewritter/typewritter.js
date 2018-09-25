@@ -112,6 +112,10 @@ function calculateSpeed() {
     speed = currentIndex / text.length;
 }
 
+/**
+ * Enable/disable stop button
+ * @param {Boolean} isEnabled
+ */
 function changeStopBtnStatus(isEnabled) {
     var btn = document.getElementById('stop-btn');
     btn.disabled = !isEnabled;
