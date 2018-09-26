@@ -44,8 +44,7 @@ namespace TypeWell
                     "~/Content/blocks/typewritter/typewritter.css",
                     "~/Content/blocks/button/button.css",
                     "~/Content/blocks/timer/timer.css",
-                    "~/Content/blocks/btn-group/btn-group.css",
-                    "~/Content/blocks/popup/popup.css"
+                    "~/Content/blocks/btn-group/btn-group.css"
                     ));
 
             //css for: Home Index

@@ -21,6 +21,8 @@ function startTest() {
     if (!isFirstTest) {
         changeDispalyPropertiesAfterTestFinishes("1", "none");
     }
+
+    makeTextVisible();
     isFirstTest = false;
     initStatsValues();
     changeStopBtnStatus(true);
@@ -29,6 +31,13 @@ function startTest() {
     initTextBox('test-text');
     initTextString('text');
     timerOnGoing();
+}
+
+function makeTextVisible() {
+    var elem = document.getElementById('test-text');
+    elem.style.opacity = 1;
+    elem = document.getElementById('rules');
+    elem.style.display = "none";
 }
 
 /**

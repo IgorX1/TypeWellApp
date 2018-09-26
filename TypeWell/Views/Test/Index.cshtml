@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Sarpanch" rel="stylesheet">
 <main class="main-wrapper">
     <input type="hidden" id="text" value="@Model.TextForTest">
-    <div class="main-wrapper__segment main-wrapper__for-timer">
+    <div class="main-wrapper__segment main-wrapper__for-timer main-wrapper_without-bottomborder">
         <div class="timer" id="timer">1:00</div>
         <div class="typewritter typewritter__test typewritter_margin_top_big typewritter_height_big">
             <div class="typewritter__results" id="resblock">
@@ -31,13 +31,27 @@
                     <span class="typewritter__results-value" id="progressId"></span>
                 </div><!--% of text typed-->
             </div>
-            <p class="typewritter__test-text" id="test-text" tabindex="0">
-                @foreach (char c in Model.TextForTest.ToCharArray())
-                {<!--                       
-                    --><span class="typewritter__character">@c</span><!--                                     
-                -->}
-            </p>
-        </div>
+            <div class="typewritter__rules" id="rules">
+                <h3 class="typewritter__rules-header">RULES</h3>
+                <div class="typewritter__rules-item">
+                    <span>Make yourself comfortable. This quick test has nothing in common with your graduation tests</span>
+                </div>
+                <div class="typewritter__rules-item">
+                    <span>Try not to look at the keyboard. The main purpose of what you're doing now is to get the skill of touch typing</span>
+                </div>
+                <div class="typewritter__rules-item">
+                    <span>Do not worry about all those mistakes. Learn from your mistakes - it's really useful!</span>
+                </div>
+            </div>
+                <p class="typewritter__test-text" id="test-text" tabindex="0">
+                    @foreach (char c in Model.TextForTest.ToCharArray())
+                    {<!--
+   
+                     --><span class="typewritter__character">@c</span><!--
+            
+-->}
+                </p>
+            </div>
         <div class="btn-group">
             <button class="button button__start button_size_large button_position_centered" onclick="startTest()">
                 <span class="button__text button-large__text">Start</span>
