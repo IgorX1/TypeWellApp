@@ -12,18 +12,18 @@ namespace TypeWell
     using System;
     using System.Collections.Generic;
     
-    public partial class LENGTH
+    public partial class LENGTH1
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LENGTH()
+        public LENGTH1()
         {
-            this.TEXTs = new HashSet<TEXT>();
+            this.TEXTs = new HashSet<TEXT1>();
         }
     
         public int Id { get; set; }
         public string Value { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TEXT> TEXTs { get; set; }
+        public virtual ICollection<TEXT1> TEXTs { get; set; }
     }
 }

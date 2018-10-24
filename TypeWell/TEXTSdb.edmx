@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TypeWell20181021111715_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="start_ip_address" Type="nvarchar(max)" />
+          <Property Name="end_ip_address" Type="nvarchar(max)" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LANGUAGE">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LANGUAGEs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LENGTH">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LENGTHs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TEXT">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TextForTest" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NumOfSymbols" Type="int" />
+          <Property Name="Language" Type="int" Nullable="false" />
+          <Property Name="Length" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TEXTs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TextForTest" Type="nvarchar(max)" />
+          <Property Name="NumOfSymbols" Type="int" />
+          <Property Name="Language" Type="int" Nullable="false" />
+          <Property Name="Length" Type="int" Nullable="false" />
+          <Property Name="LANGUAGE1_Id" Type="int" />
+          <Property Name="LENGTH1_Id" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TypeWell20181021111715_db.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="database_firewall_rules1">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_TEXTs_dbo_LANGUAGEs_LANGUAGE1_Id">
+          <End Role="LANGUAGEs" Type="Self.LANGUAGEs" Multiplicity="0..1" />
+          <End Role="TEXTs" Type="Self.TEXTs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LANGUAGEs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TEXTs">
+              <PropertyRef Name="LANGUAGE1_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TEXTs_dbo_LENGTHs_LENGTH1_Id">
+          <End Role="LENGTHs" Type="Self.LENGTHs" Multiplicity="0..1" />
+          <End Role="TEXTs" Type="Self.TEXTs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LENGTHs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TEXTs">
+              <PropertyRef Name="LENGTH1_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TEXT_LANGUAGE">
+          <End Role="LANGUAGE" Type="Self.LANGUAGE" Multiplicity="1" />
+          <End Role="TEXT" Type="Self.TEXT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LANGUAGE">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TEXT">
+              <PropertyRef Name="Language" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TEXT_TEXT">
+          <End Role="LENGTH" Type="Self.LENGTH" Multiplicity="1" />
+          <End Role="TEXT" Type="Self.TEXT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LENGTH">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TEXT">
+              <PropertyRef Name="Length" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TypeWell20181021111715_dbModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LANGUAGE" EntityType="Self.LANGUAGE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LANGUAGEs" EntityType="Self.LANGUAGEs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LENGTH" EntityType="Self.LENGTH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LENGTHs" EntityType="Self.LENGTHs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEXT" EntityType="Self.TEXT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEXTs" EntityType="Self.TEXTs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="database_firewall_rules1" EntityType="Self.database_firewall_rules1" store:Type="Views" store:Schema="sys" store:Name="database_firewall_rules">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules1].[id] AS [id], 
+    [database_firewall_rules1].[name] AS [name], 
+    [database_firewall_rules1].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules1].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules1].[create_date] AS [create_date], 
+    [database_firewall_rules1].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules1]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_dbo_TEXTs_dbo_LANGUAGEs_LANGUAGE1_Id" Association="Self.FK_dbo_TEXTs_dbo_LANGUAGEs_LANGUAGE1_Id">
+            <End Role="LANGUAGEs" EntitySet="LANGUAGEs" />
+            <End Role="TEXTs" EntitySet="TEXTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TEXTs_dbo_LENGTHs_LENGTH1_Id" Association="Self.FK_dbo_TEXTs_dbo_LENGTHs_LENGTH1_Id">
+            <End Role="LENGTHs" EntitySet="LENGTHs" />
+            <End Role="TEXTs" EntitySet="TEXTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TEXT_LANGUAGE" Association="Self.FK_TEXT_LANGUAGE">
+            <End Role="LANGUAGE" EntitySet="LANGUAGE" />
+            <End Role="TEXT" EntitySet="TEXT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TEXT_TEXT" Association="Self.FK_TEXT_TEXT">
+            <End Role="LENGTH" EntitySet="LENGTH" />
+            <End Role="TEXT" EntitySet="TEXT" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TypeWell20181021111715_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="start_ip_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="end_ip_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="LANGUAGE">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TEXTs" Relationship="Self.FK_TEXT_LANGUAGE" FromRole="LANGUAGE" ToRole="TEXT" />
+        </EntityType>
+        <EntityType Name="LANGUAGE1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TEXTs" Relationship="Self.FK_dbo_TEXTs_dbo_LANGUAGEs_LANGUAGE1_Id" FromRole="LANGUAGEs" ToRole="TEXTs" />
+        </EntityType>
+        <EntityType Name="LENGTH">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TEXTs" Relationship="Self.FK_TEXT_TEXT" FromRole="LENGTH" ToRole="TEXT" />
+        </EntityType>
+        <EntityType Name="LENGTH1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TEXTs" Relationship="Self.FK_dbo_TEXTs_dbo_LENGTHs_LENGTH1_Id" FromRole="LENGTHs" ToRole="TEXTs" />
+        </EntityType>
+        <EntityType Name="TEXT">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TextForTest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NumOfSymbols" Type="Int32" />
+          <Property Name="Language" Type="Int32" Nullable="false" />
+          <Property Name="Length" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LANGUAGE1" Relationship="Self.FK_TEXT_LANGUAGE" FromRole="TEXT" ToRole="LANGUAGE" />
+          <NavigationProperty Name="LENGTH1" Relationship="Self.FK_TEXT_TEXT" FromRole="TEXT" ToRole="LENGTH" />
+        </EntityType>
+        <EntityType Name="TEXT1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TextForTest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NumOfSymbols" Type="Int32" />
+          <Property Name="Language" Type="Int32" Nullable="false" />
+          <Property Name="Length" Type="Int32" Nullable="false" />
+          <Property Name="LANGUAGE1_Id" Type="Int32" />
+          <Property Name="LENGTH1_Id" Type="Int32" />
+          <NavigationProperty Name="LANGUAGE1" Relationship="Self.FK_dbo_TEXTs_dbo_LANGUAGEs_LANGUAGE1_Id" FromRole="TEXTs" ToRole="LANGUAGEs" />
+          <NavigationProperty Name="LENGTH1" Relationship="Self.FK_dbo_TEXTs_dbo_LENGTHs_LENGTH1_Id" FromRole="TEXTs" ToRole="LENGTHs" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules1">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_TEXT_LANGUAGE">
+          <End Role="LANGUAGE" Type="Self.LANGUAGE" Multiplicity="1" />
+          <End Role="TEXT" Type="Self.TEXT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LANGUAGE">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TEXT">
+              <PropertyRef Name="Language" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TEXTs_dbo_LANGUAGEs_LANGUAGE1_Id">
+          <End Role="LANGUAGEs" Type="Self.LANGUAGE1" Multiplicity="0..1" />
+          <End Role="TEXTs" Type="Self.TEXT1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LANGUAGEs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TEXTs">
+              <PropertyRef Name="LANGUAGE1_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TEXT_TEXT">
+          <End Role="LENGTH" Type="Self.LENGTH" Multiplicity="1" />
+          <End Role="TEXT" Type="Self.TEXT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LENGTH">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TEXT">
+              <PropertyRef Name="Length" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TEXTs_dbo_LENGTHs_LENGTH1_Id">
+          <End Role="LENGTHs" Type="Self.LENGTH1" Multiplicity="0..1" />
+          <End Role="TEXTs" Type="Self.TEXT1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LENGTHs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TEXTs">
+              <PropertyRef Name="LENGTH1_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TypeWell20181021111715_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+          <EntitySet Name="LANGUAGEs" EntityType="Self.LANGUAGE" />
+          <EntitySet Name="LANGUAGEs1" EntityType="Self.LANGUAGE1" />
+          <EntitySet Name="LENGTHs" EntityType="Self.LENGTH" />
+          <EntitySet Name="LENGTHs1" EntityType="Self.LENGTH1" />
+          <EntitySet Name="TEXTs" EntityType="Self.TEXT" />
+          <EntitySet Name="TEXTs1" EntityType="Self.TEXT1" />
+          <EntitySet Name="database_firewall_rules1" EntityType="Self.database_firewall_rules1" />
+          <AssociationSet Name="FK_TEXT_LANGUAGE" Association="Self.FK_TEXT_LANGUAGE">
+            <End Role="LANGUAGE" EntitySet="LANGUAGEs" />
+            <End Role="TEXT" EntitySet="TEXTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TEXTs_dbo_LANGUAGEs_LANGUAGE1_Id" Association="Self.FK_dbo_TEXTs_dbo_LANGUAGEs_LANGUAGE1_Id">
+            <End Role="LANGUAGEs" EntitySet="LANGUAGEs1" />
+            <End Role="TEXTs" EntitySet="TEXTs1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TEXT_TEXT" Association="Self.FK_TEXT_TEXT">
+            <End Role="LENGTH" EntitySet="LENGTHs" />
+            <End Role="TEXT" EntitySet="TEXTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TEXTs_dbo_LENGTHs_LENGTH1_Id" Association="Self.FK_dbo_TEXTs_dbo_LENGTHs_LENGTH1_Id">
+            <End Role="LENGTHs" EntitySet="LENGTHs1" />
+            <End Role="TEXTs" EntitySet="TEXTs1" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TypeWell20181021111715_dbModelStoreContainer" CdmEntityContainer="TypeWell20181021111715_dbEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="TypeWell20181021111715_dbModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="TypeWell20181021111715_dbModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LANGUAGEs">
+            <EntityTypeMapping TypeName="TypeWell20181021111715_dbModel.LANGUAGE">
+              <MappingFragment StoreEntitySet="LANGUAGE">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LANGUAGEs1">
+            <EntityTypeMapping TypeName="TypeWell20181021111715_dbModel.LANGUAGE1">
+              <MappingFragment StoreEntitySet="LANGUAGEs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LENGTHs">
+            <EntityTypeMapping TypeName="TypeWell20181021111715_dbModel.LENGTH">
+              <MappingFragment StoreEntitySet="LENGTH">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LENGTHs1">
+            <EntityTypeMapping TypeName="TypeWell20181021111715_dbModel.LENGTH1">
+              <MappingFragment StoreEntitySet="LENGTHs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEXTs">
+            <EntityTypeMapping TypeName="TypeWell20181021111715_dbModel.TEXT">
+              <MappingFragment StoreEntitySet="TEXT">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TextForTest" ColumnName="TextForTest" />
+                <ScalarProperty Name="NumOfSymbols" ColumnName="NumOfSymbols" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEXTs1">
+            <EntityTypeMapping TypeName="TypeWell20181021111715_dbModel.TEXT1">
+              <MappingFragment StoreEntitySet="TEXTs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TextForTest" ColumnName="TextForTest" />
+                <ScalarProperty Name="NumOfSymbols" ColumnName="NumOfSymbols" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="LANGUAGE1_Id" ColumnName="LANGUAGE1_Id" />
+                <ScalarProperty Name="LENGTH1_Id" ColumnName="LENGTH1_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules1">
+            <EntityTypeMapping TypeName="TypeWell20181021111715_dbModel.database_firewall_rules1">
+              <MappingFragment StoreEntitySet="database_firewall_rules1">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

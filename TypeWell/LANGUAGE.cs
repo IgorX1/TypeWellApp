@@ -17,13 +17,13 @@ namespace TypeWell
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LANGUAGE()
         {
-            this.TEXT = new HashSet<TEXT>();
+            this.TEXTs = new HashSet<TEXT>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TEXT> TEXT { get; set; }
+        public virtual ICollection<TEXT> TEXTs { get; set; }
     }
 }

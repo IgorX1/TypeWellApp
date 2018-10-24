@@ -12,12 +12,17 @@ namespace TypeWell
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class TEXT1
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int Id { get; set; }
+        public string TextForTest { get; set; }
+        public Nullable<int> NumOfSymbols { get; set; }
+        public int Language { get; set; }
+        public int Length { get; set; }
+        public Nullable<int> LANGUAGE1_Id { get; set; }
+        public Nullable<int> LENGTH1_Id { get; set; }
+    
+        public virtual LANGUAGE1 LANGUAGE1 { get; set; }
+        public virtual LENGTH1 LENGTH1 { get; set; }
     }
 }

@@ -196,46 +196,55 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>TEXTSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database_firewall_rules.cs">
+      <DependentUpon>TEXTSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database_firewall_rules1.cs">
+      <DependentUpon>TEXTSdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LANGUAGE.cs">
-      <DependentUpon>TextsForTypingModel.tt</DependentUpon>
+      <DependentUpon>TEXTSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LANGUAGE1.cs">
+      <DependentUpon>TEXTSdb.tt</DependentUpon>
     </Compile>
     <Compile Include="LENGTH.cs">
-      <DependentUpon>TextsForTypingModel.tt</DependentUpon>
+      <DependentUpon>TEXTSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LENGTH1.cs">
+      <DependentUpon>TEXTSdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>TextsForTypingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>TextsForTypingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>TextsForTypingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="TEXT.cs">
-      <DependentUpon>TextsForTypingModel.tt</DependentUpon>
+      <DependentUpon>TEXTSdb.tt</DependentUpon>
     </Compile>
-    <Compile Include="TextsForTypingModel.Context.cs">
+    <Compile Include="TEXT1.cs">
+      <DependentUpon>TEXTSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEXTSdb.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TextsForTypingModel.Context.tt</DependentUpon>
+      <DependentUpon>TEXTSdb.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="TextsForTypingModel.cs">
+    <Compile Include="TEXTSdb.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TextsForTypingModel.tt</DependentUpon>
+      <DependentUpon>TEXTSdb.tt</DependentUpon>
     </Compile>
-    <Compile Include="TextsForTypingModel.Designer.cs">
+    <Compile Include="TEXTSdb.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TextsForTypingModel.edmx</DependentUpon>
+      <DependentUpon>TEXTSdb.edmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -265,6 +274,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\TypeWell - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\TypeWell20181021111715 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -277,17 +288,19 @@
     <Content Include="Content\blocks\typewritter\typewritter.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="TextsForTypingModel.Context.tt">
+    <Content Include="TEXTSdb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TextsForTypingModel.edmx</DependentUpon>
-      <LastGenOutput>TextsForTypingModel.Context.cs</LastGenOutput>
+      <DependentUpon>TEXTSdb.edmx</DependentUpon>
+      <LastGenOutput>TEXTSdb.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="TextsForTypingModel.tt">
+    <Content Include="TEXTSdb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TextsForTypingModel.edmx</DependentUpon>
-      <LastGenOutput>TextsForTypingModel.cs</LastGenOutput>
+      <DependentUpon>TEXTSdb.edmx</DependentUpon>
+      <LastGenOutput>TEXTSdb.cs</LastGenOutput>
     </Content>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -322,12 +335,12 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
-    <EntityDeploy Include="TextsForTypingModel.edmx">
+    <EntityDeploy Include="TEXTSdb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TextsForTypingModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>TEXTSdb.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="TextsForTypingModel.edmx.diagram">
-      <DependentUpon>TextsForTypingModel.edmx</DependentUpon>
+    <Content Include="TEXTSdb.edmx.diagram">
+      <DependentUpon>TEXTSdb.edmx</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
